@@ -1,4 +1,3 @@
-
 /* HELLO WORLD !
 
 OpenClassrooms, projet HTML, CSS : Booki
@@ -25,10 +24,6 @@ OpenClassrooms, projet HTML, CSS : Booki
     margin: unset;
 }
 
-a{
-    color: black;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -40,32 +35,29 @@ html {
     }
 }
 
-body {
-    margin: 0px 30px;
-}
-
-h1, h2{
+h1,
+h2 {
     font-size: 22px;
     font-weight: 700;
 }
 
-h3{
+h3 {
     font-size: 16px;
     font-weight: 700;
     /* cards */
 }
 
-h4{
+h4 {
     font-size: 18px;
     font-weight: 700;
 }
 
-p{
+p {
     font-size: 16px;
 }
 
 
-.star{
+.star {
     width: 12px;
     height: 12px;
     color: #0065FC;
@@ -83,47 +75,99 @@ p{
 
 /* HEADER | DESKTOP | TABLET */
 
-#nav{
+#nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 111px;
+    margin: 0 55px;
 }
 
-.logo{
+.logo {
     height: 19px;
 }
 
-#menu{
+#menu {
     display: flex;
     height: 100%;
 }
 
-.menu{
-    width: 162px;
+.menu {
+    position: relative;
+    /* sans cette notion le content au hover prendrai toute la nav */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 162px;
+    height: 100%;
+    color: black;
 }
-
 
 /* HEADER | DESKTOP | TABLET | ANIMATION */
 
-#menu a:hover{
+.menu:hover {
     color: #0065FC;
 }
 
-.menu::before{
+.menu::before {
     content: '';
     position: absolute;
     top: 0;
-    width: 162px;
+    width: 100%;
     height: 2px;
     background: #0065FC;
     transform: scale(0);
     transition-duration: 0.3s;
 }
 
-.menu:hover:before{
+.menu:hover:before {
     transform: scale(1);
+}
+
+
+/* HEADER | MOBILE */
+
+@media only screen and (max-width: 748px) {
+    #nav {
+        flex-direction: column;
+        height: 130px;
+        margin: unset;
+    }
+
+    .logo {
+        margin: 21px 0;
+    }
+
+    #menu {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu {
+        width: inherit;
+        height: 80%;
+    }
+
+    /* HEADER | MOBILE | ANIMATION */
+
+    .menu::before {
+        top: unset;
+        bottom: 0;
+        height: 3px;
+    }
+
+    .menu::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #F2F2F2;
+        transform: scale(1);
+        transition-duration: 0.3s;
+    }
+
+    .menu:hover:after {
+        transform: scale(0);
+    }
 }
