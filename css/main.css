@@ -35,6 +35,10 @@ html {
     }
 }
 
+body {
+    margin: 0 55px;
+}
+
 h1,
 h2 {
     font-size: 22px;
@@ -47,9 +51,12 @@ h3 {
     /* cards */
 }
 
-h4 {
+h4,
+input,
+button {
     font-size: 18px;
     font-weight: 700;
+    /* footer / input / button */
 }
 
 p {
@@ -79,8 +86,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 111px;
-    margin: 0 55px;
+    height: 110px;
 }
 
 .logo {
@@ -94,7 +100,7 @@ p {
 
 .menu {
     position: relative;
-    /* sans cette notion le content au hover prendrai toute la nav */
+    /* sans la notion relative le content au hover prendrai toute la nav */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,14 +134,18 @@ p {
 /* HEADER | MOBILE */
 
 @media only screen and (max-width: 748px) {
-    #nav {
-        flex-direction: column;
-        height: 130px;
+    body {
         margin: unset;
     }
 
+    #nav {
+        flex-direction: column;
+        height: 130px;
+    }
+
     .logo {
-        margin: 21px 0;
+        margin-top: 22px;
+        margin-bottom: 40px;
     }
 
     #menu {
@@ -169,5 +179,75 @@ p {
 
     .menu:hover:after {
         transform: scale(0);
+    }
+}
+
+
+/* HEADLINE | DESKTOP */
+
+#headline {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    margin-top: 30px;
+}
+
+#headline p {
+    margin-top: 8px;
+}
+
+
+/* FORM | DESKTOP */
+
+.search {
+    margin-top: 20px;
+    display: flex;
+}
+
+.search span {
+    background-color: #F2F2F2;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 0px 0px 15px;
+}
+
+.search i {
+    font-size: 18px;
+}
+
+.search input {
+    border: 1px solid #F2F2F2;
+    padding-left: 16px;
+}
+
+.search button {
+    pointer-events: none;
+    width: 130px;
+    padding: unset;
+    border: none;
+    border-radius: 0px 15px 15px 0px;
+    font-size: 18px;
+    background: #0065FC;
+    color: white;
+}
+
+@media only screen and (max-width: 748px) {
+    #headline {
+        margin-left: 20px;
+    }
+
+    .search button {
+        width: 50px;
+        font-size: 0;
+    }
+
+    .search button::after {
+        font-family: "Font Awesome 5 Free";
+        color: white;
+        content: "\f002";
+        font-size: 17px;
     }
 }
