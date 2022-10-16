@@ -1,0 +1,129 @@
+
+/* HELLO WORLD !
+
+OpenClassrooms, projet HTML, CSS : Booki
+
+- Organisation du fichier par SECTION :
+
+  UTILITIES | HEADER | FORM | FILTERS | CARDS / HOME / POP / ACT | FOOTER
+
+- Suivant les directives du projet,
+  chacune des sections est codée via la hiérarchie suivante :
+
+  DESKTOP --> TABLET --> MOBILE
+
+  Avec --> SECTION + ANIMATION */
+
+
+/* UTILITIES */
+
+* {
+    padding-inline-start: unset;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+    margin: unset;
+}
+
+a{
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+        /* au click du menu : smooth scroll */
+    }
+}
+
+body {
+    margin: 0px 30px;
+}
+
+h1, h2{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 16px;
+    font-weight: 700;
+    /* cards */
+}
+
+h4{
+    font-size: 18px;
+    font-weight: 700;
+}
+
+p{
+    font-size: 16px;
+}
+
+
+.star{
+    width: 12px;
+    height: 12px;
+    color: #0065FC;
+}
+
+.four-star :nth-child(5) {
+    color: #F2F2F2;
+}
+
+.three-star :nth-child(4),
+.three-star :nth-child(5) {
+    color: #F2F2F2;
+}
+
+
+/* HEADER | DESKTOP | TABLET */
+
+#nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 111px;
+}
+
+.logo{
+    height: 19px;
+}
+
+#menu{
+    display: flex;
+    height: 100%;
+}
+
+.menu{
+    width: 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* HEADER | DESKTOP | TABLET | ANIMATION */
+
+#menu a:hover{
+    color: #0065FC;
+}
+
+.menu::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 162px;
+    height: 2px;
+    background: #0065FC;
+    transform: scale(0);
+    transition-duration: 0.3s;
+}
+
+.menu:hover:before{
+    transform: scale(1);
+}
