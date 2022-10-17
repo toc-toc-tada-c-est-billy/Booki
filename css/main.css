@@ -68,20 +68,9 @@ p {
     font-size: 16px;
 }
 
-
-.star {
-    width: 12px;
-    height: 12px;
-    color: #0065FC;
-}
-
-.four-star :nth-child(5) {
-    color: #F2F2F2;
-}
-
-.three-star :nth-child(4),
-.three-star :nth-child(5) {
-    color: #F2F2F2;
+.card p{
+    font-size: 14px;
+    font-weight: 400;
 }
 
 
@@ -244,18 +233,23 @@ h1 {
         margin-right: 20px;
     }
 
-    h1{
+    h1 {
         margin-bottom: 13px;
     }
 
-    .search{
+    .search {
         margin-top: 36px;
+        width: 100%;
+        border-radius: 0 15px 15px 0;
     }
 
     .search button {
         width: 50px;
         font-size: 0;
         border-radius: 15px;
+        position: absolute;
+        right: 20px;
+        height: 50px;
     }
 
     .search button::after {
@@ -372,8 +366,125 @@ h1 {
     flex-shrink: 0;
 }
 
-@media only screen and (max-width: 748px){
-    .info{
+@media only screen and (max-width: 748px) {
+    .info {
         margin-top: 40px;
+        align-items: flex-start;
     }
+
+    .info i {
+        font-size: 14px;
+    }
+}
+
+
+/* CARD | HOME | DESKTOP */
+
+#home{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 40px;
+    width: 70%;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin-bottom: 200px;
+    gap: 25px;
+}
+
+#home > div{
+    display: flex;
+    flex-flow: nowrap;
+    width: 100%;
+    gap: 25px;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+}
+
+.home img{
+    position: relative;
+    width: auto;
+    height: 60%;
+    border: 5px solid #FFFFFF;
+    border-radius: 20px 20px 0 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.home div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40%;
+    gap: 9px;
+    background-color: #FFFFFF;
+    border-radius: 0 0 20px 20px;
+}
+
+.line-one .home:first-child img{
+    background-image: url("../images/home/4-auberge-la-cannebiere.jpg");
+}
+
+.line-one .home:nth-child(2) img{
+    background-image: url("../images/home/5-hotel-du-sport.jpg");
+}
+
+.line-one .home:last-child img{
+    background-image: url("../images/home/6-hotel-les-mouettes.jpg");
+}
+
+.line-two .home:first-child img{
+    background-image: url("../images/home/7-hotel-de-la-mer.jpg");
+}
+
+.line-two .home:nth-child(2) img{
+    background-image: url("../images/home/8-auberge-le-panier.jpg");
+}
+
+.line-two .home:last-child img{
+    background-image: url("../images/home/9-hotel-chez-amina.jpg");
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0 11px 16px;
+}
+
+.card span{
+    display: flex;
+    flex-direction: row;
+    flex-flow: nowrap;
+}
+
+.star::before{
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    letter-spacing: 2px;
+    content: "\f005\f005\f005\f005";
+    color: #0065FC;
+}
+
+.star::after{
+    font-family: "Font Awesome 5 Free";
+    font-size: 12px;
+    padding-left: 2px;
+    content: "\f005";
+    color: #D9D9D9;
+}
+
+.more{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    width: fit-content;
+    padding: 2px;
 }
