@@ -1,0 +1,181 @@
+@media only screen and (max-width: 1080px) {
+    h3{
+        font-size: 14px;
+    }
+
+    .card p{
+        font-size: 16px;
+    }
+}
+
+
+/* TABLET */
+
+@media only screen and (max-width: 992px) {
+    body {
+        margin: 0 30px;
+    }
+
+    .filter,
+    .filter div {
+        gap: 15px;
+    }
+
+    .filter button{
+        padding: 0 10px;
+    }
+    .filter i {
+        margin-right: 10px;
+    }
+
+    @media only screen and (max-width: 860px) {
+        .filter button,
+        .filter p{
+            font-size: 14px
+        }
+    }
+
+    .card-flow {
+        flex-direction: column;
+    }
+
+    #home {
+        width: initial;
+    }
+}
+
+
+/* MOBILE */
+
+@media only screen and (max-width: 748px) {
+    body {
+        margin: unset;
+    }
+
+    .header {
+        flex-direction: column;
+        height: 130px;
+        margin-inline: 0;
+    }
+
+    .logo {
+        margin-top: 22px;
+        margin-bottom: 40px;
+    }
+
+    #navigation {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #navigation li,
+    #navigation ul{
+        width: 100%;
+        height: 64px;
+    }
+
+    #navigation a {
+        width: inherit;
+        height: 80%;
+    }
+
+    /* HEADER | ANIMATION */
+
+    #navigation a::before {
+        top: unset;
+        bottom: 0;
+        height: 3px;
+    }
+
+    #navigation a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #F2F2F2;
+        transform: scale(1);
+        transition-duration: 0.3s;
+    }
+
+    #navigation a:hover:after {
+        transform: scale(0);
+    }
+
+    main{
+        margin-top: 30px;
+        margin-inline: 0;
+    }
+    #headline {
+        margin-inline: 20px;
+    }
+
+    h1 {
+        margin-bottom: 13px;
+    }
+
+    .search {
+        margin-top: 36px;
+        width: 100%;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .search button {
+        width: 50px;
+        font-size: 0;
+        border-radius: 15px;
+        position: absolute;
+        right: 20px;
+        height: 50px;
+    }
+
+    .search button::after {
+        font-family: "Font Awesome 5 Free";
+        color: white;
+        content: "\f002";
+        font-size: 17px;
+    }
+
+    .filter {
+        align-items: normal;
+        gap: 16px;
+        margin-top: 34px;
+    }
+
+    .filter p{
+        width: 100%;
+    }
+
+    .filter div {
+        flex-flow: nowrap;
+        gap: 14px;
+    }
+
+    .filter button {
+        display: flex;
+        flex-flow: nowrap;
+        align-items: center;
+        padding: unset;
+        font-size: 11px;
+        width: 48%;
+    }
+
+    .filter i {
+        margin-left: 13px;
+        margin-right: 5px;
+        font-size: 16px;
+    }
+
+    .filter button:focus-within {
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+    .info {
+        margin-top: 40px;
+        align-items: flex-start;
+    }
+
+    .info i {
+        font-size: 14px;
+    }
+}

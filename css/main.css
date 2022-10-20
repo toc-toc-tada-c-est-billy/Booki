@@ -16,6 +16,8 @@ OpenClassrooms, projet HTML, CSS : Booki
 
 /* UTILITIES */
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     padding-inline-start: unset;
     text-decoration: none;
@@ -33,10 +35,6 @@ html {
         scroll-behavior: auto;
         /* au click du menu : smooth scroll */
     }
-}
-
-body {
-    margin: 0 55px;
 }
 
 h1,
@@ -68,7 +66,7 @@ p {
     font-size: 16px;
 }
 
-.card p{
+.card p {
     font-size: 14px;
     font-weight: 400;
 }
@@ -76,40 +74,47 @@ p {
 
 /* HEADER | DESKTOP | TABLET */
 
-#nav {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 110px;
+    margin-inline: 55px;
 }
 
-.logo {
+.logo img {
     height: 19px;
 }
 
-#menu {
+#navigation,
+#navigation ul {
     display: flex;
     height: 100%;
+    align-items: center;
 }
 
-.menu {
-    position: relative;
-    /* sans la notion relative le content au hover prendrai toute la nav */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 162px;
+#navigation li {
+    width: 140px;
     height: 100%;
+    display: flex;
+}
+
+#navigation a {
+    position: relative;
+    display: flex;
     color: black;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
 }
 
 /* HEADER | DESKTOP | TABLET | ANIMATION */
 
-.menu:hover {
+#navigation a:hover {
     color: #0065FC;
 }
 
-.menu::before {
+#navigation a::before {
     content: '';
     position: absolute;
     top: 0;
@@ -120,64 +125,16 @@ p {
     transition-duration: 0.3s;
 }
 
-.menu:hover:before {
+#navigation a:hover:before {
     transform: scale(1);
 }
 
 
-/* HEADER | MOBILE */
-
-@media only screen and (max-width: 748px) {
-    body {
-        margin: unset;
-    }
-
-    #nav {
-        flex-direction: column;
-        height: 130px;
-    }
-
-    .logo {
-        margin-top: 22px;
-        margin-bottom: 40px;
-    }
-
-    #menu {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .menu {
-        width: inherit;
-        height: 80%;
-    }
-
-    /* HEADER | MOBILE | ANIMATION */
-
-    .menu::before {
-        top: unset;
-        bottom: 0;
-        height: 3px;
-    }
-
-    .menu::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 3px;
-        background: #F2F2F2;
-        transform: scale(1);
-        transition-duration: 0.3s;
-    }
-
-    .menu:hover:after {
-        transform: scale(0);
-    }
-}
-
-
 /* HEADLINE | DESKTOP */
+
+main {
+    margin-inline: 55px;
+}
 
 #headline {
     display: flex;
@@ -227,39 +184,6 @@ h1 {
     color: white;
 }
 
-@media only screen and (max-width: 748px) {
-    #headline {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    h1 {
-        margin-bottom: 13px;
-    }
-
-    .search {
-        margin-top: 36px;
-        width: 100%;
-        border-radius: 0 15px 15px 0;
-    }
-
-    .search button {
-        width: 50px;
-        font-size: 0;
-        border-radius: 15px;
-        position: absolute;
-        right: 20px;
-        height: 50px;
-    }
-
-    .search button::after {
-        font-family: "Font Awesome 5 Free";
-        color: white;
-        content: "\f002";
-        font-size: 17px;
-    }
-}
-
 
 /* FILTER | DESKTOP */
 
@@ -268,19 +192,12 @@ h1 {
     flex-flow: wrap;
     align-items: center;
     margin-top: 30px;
-    gap: 30px;
-}
-
-.filter div {
-    display: flex;
-    flex-flow: wrap;
-    gap: 30px;
+    gap: 22px;
 }
 
 .filter button {
     height: 50px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 0 20px;
     background-color: unset;
     border: 2px solid #D9D9D9;
     border-radius: 25px;
@@ -312,39 +229,6 @@ h1 {
     color: white;
 }
 
-@media only screen and (max-width: 748px) {
-    .filter {
-        flex-direction: column;
-        align-items: normal;
-        gap: 16px;
-        margin-top: 34px;
-    }
-
-    .filter div {
-        flex-flow: nowrap;
-        gap: 14px;
-    }
-
-    .filter button {
-        display: flex;
-        flex-flow: nowrap;
-        align-items: center;
-        padding: unset;
-        font-size: 11px;
-        width: 50%;
-    }
-
-    .filter i {
-        margin-left: 13px;
-        margin-right: 5px;
-        font-size: 16px;
-    }
-
-    .filter button:focus-within {
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    }
-}
-
 
 .info {
     display: flex;
@@ -366,21 +250,16 @@ h1 {
     flex-shrink: 0;
 }
 
-@media only screen and (max-width: 748px) {
-    .info {
-        margin-top: 40px;
-        align-items: flex-start;
-    }
-
-    .info i {
-        font-size: 14px;
-    }
-}
-
 
 /* CARD | HOME | DESKTOP */
 
-#home{
+.card-flow {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+#home {
     display: flex;
     flex-direction: column;
     margin-top: 40px;
@@ -392,14 +271,14 @@ h1 {
     gap: 25px;
 }
 
-#home > div{
+#home>div {
     display: flex;
     flex-flow: nowrap;
     width: 100%;
     gap: 25px;
 }
 
-.home{
+.home {
     display: flex;
     flex-direction: column;
     width: 33%;
@@ -407,65 +286,46 @@ h1 {
     overflow: hidden;
 }
 
-.home img{
+
+.img-home {
     position: relative;
     width: auto;
     height: 60%;
     border: 5px solid #FFFFFF;
     border-radius: 20px 20px 0 0;
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
 }
 
-.home div{
+.img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+}
+
+.home div {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    
+}
+
+.card-home {
     height: 40%;
-    gap: 9px;
-    background-color: #FFFFFF;
-    border-radius: 0 0 20px 20px;
-}
-
-.line-one .home:first-child img{
-    background-image: url("../images/home/4-auberge-la-cannebiere.jpg");
-}
-
-.line-one .home:nth-child(2) img{
-    background-image: url("../images/home/5-hotel-du-sport.jpg");
-}
-
-.line-one .home:last-child img{
-    background-image: url("../images/home/6-hotel-les-mouettes.jpg");
-}
-
-.line-two .home:first-child img{
-    background-image: url("../images/home/7-hotel-de-la-mer.jpg");
-}
-
-.line-two .home:nth-child(2) img{
-    background-image: url("../images/home/8-auberge-le-panier.jpg");
-}
-
-.line-two .home:last-child img{
-    background-image: url("../images/home/9-hotel-chez-amina.jpg");
-}
-
-.card{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 4px 0 11px 16px;
+    background: #FFFFFF;
+    border-radius: 0 0 20px 20px;
 }
 
-.card span{
+.card span {
     display: flex;
     flex-direction: row;
     flex-flow: nowrap;
 }
 
-.star::before{
+.star::before {
     font-family: "Font Awesome 5 Free";
     font-size: 12px;
     letter-spacing: 2px;
@@ -473,7 +333,7 @@ h1 {
     color: #0065FC;
 }
 
-.star::after{
+.star::after {
     font-family: "Font Awesome 5 Free";
     font-size: 12px;
     padding-left: 2px;
@@ -481,10 +341,59 @@ h1 {
     color: #D9D9D9;
 }
 
-.more{
+.more {
     cursor: pointer;
     font-size: 18px;
     font-weight: 700;
     width: fit-content;
     padding: 2px;
+    margin-top: 15px;
+}
+
+
+/* CARD | POP | DESKTOP */
+
+#pop {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 40px;
+    width: 30%;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    margin-bottom: 200px;
+    gap: 25px;
+}
+
+.pop {
+    display: flex;
+    aspect-ratio: 7/3;
+    width: auto;
+    height: 30%;
+    overflow: hidden;
+}
+
+.img-pop {
+    position: relative;
+    width: 35%;
+    height: auto;
+    border: 5px solid #FFFFFF;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.card-pop{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px 22px 12px 15px;
+    background: #FFFFFF;
+    border-radius: 0 20px 20px 0;
+}
+
+.card-pop-spec{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
