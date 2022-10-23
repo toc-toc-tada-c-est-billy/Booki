@@ -150,7 +150,7 @@ p {
 
 /* HEADLINE */
 
-main {
+.main {
     margin-inline: 30px;
 }
 
@@ -347,7 +347,7 @@ h1 {
 }
 
 .container:hover img {
-    scale: 0.8;
+    transform: scale(0.8);
 }
 
 .container:hover .img-container {
@@ -489,7 +489,7 @@ h1 {
 /* ANIMATION CARD ACT */
 
 #act .container:hover .img {
-    scale: 0.9;
+    transform: scale(0.9);
 }
 
 #act .container:hover .card-container {
@@ -547,7 +547,7 @@ h4 {
         margin-inline: 50px;
     }
 
-    main {
+    .main {
         margin-inline: 50px;
     }
 
@@ -615,7 +615,7 @@ h4 {
     }
 
     .header,
-    main {
+    .main {
         margin: unset;
     }
 
@@ -669,7 +669,7 @@ h4 {
         transform: scale(0);
     }
 
-    main {
+    .main {
         margin-top: 30px;
         margin-inline: 0;
     }
